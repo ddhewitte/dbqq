@@ -21,7 +21,26 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('content/home');
+		//parsing login
+		if($this->session->userdata('tipe') == 'admin')
+		{			
+			//dashboard admin
+			$this->load->view('content/home');
+			
+		}elseif($this->session->userdata('tipe') == 'petani'){
+			
+			//dashboard admin
+			$this->load->view('content/home_petani');
+			
+		}elseif($this->session->userdata('tipe') == 'distributor'){
+			
+			//dashboard admin
+			$this->load->view('content/home_distributor');
+		}else{
+			$data['err_message'] = 'Anda belum login ! login terlebih dahulu';
+			$this->load->view('content/login', $data);
+		}
+		
 	}
 
 
