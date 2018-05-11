@@ -1,6 +1,4 @@
   <div class="container">
-	  
-	  
 
       <form class="form-signin" method="post" action="<?php echo site_url('login/proses'); ?>">
 		<?php if(isset($err_message)){ ?> 

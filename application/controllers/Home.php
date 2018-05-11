@@ -37,8 +37,7 @@ class Home extends CI_Controller {
 			//dashboard admin
 			$this->load->view('content/home_distributor');
 		}else{
-			$data['err_message'] = 'Anda belum login ! login terlebih dahulu';
-			$this->load->view('content/login', $data);
+			redirect('login');
 		}
 		
 	}
