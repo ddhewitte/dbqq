@@ -7,6 +7,7 @@
 			</div>
 		<?php } ?>
 		  
+        <h1 class="form-signin-heading">Welcome to my Apps</h1>
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Username</label>
         <input type="text" name="username" class="form-control" placeholder="Username" required autofocus>
