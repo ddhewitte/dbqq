@@ -107,6 +107,11 @@
 		border: 1px solid #D0D0D0;
 		-webkit-box-shadow: 0 0 8px #D0D0D0;
 	}
+		
+	/*hwt*/
+	.inner{
+		padding-top : 20px;
+		}
 	</style>
 
 </head>
@@ -122,14 +127,31 @@
             <span class="icon-bar"></span>
           </a>
           <img src="<?php echo base_url(); ?>assets/themes/default/images/logo.png" style="float:left;margin-top:5px;z-index:5" alt="logo"/>
-          <a class="brand" href="<?php echo site_url(); ?>">&nbsp;&nbsp;Your Brand</a>
+          <a class="brand" href="<?php echo site_url(); ?>">&nbsp;&nbsp;DBQQ Apps</a>
           <div style="height: 0px;" class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="<?php echo site_url(); ?>">Home</a></li>
-			  <li><a href="<?php echo site_url('example/example_1'); ?>">Example 1</a></li>
-              <li><a href="<?php echo site_url('example/example_2'); ?>">Example 2</a></li>
-              <li><a href="<?php echo site_url('example/example_3'); ?>">Example 3</a></li>
-              <li><a href="<?php echo site_url('example/example_4'); ?>">Example 4</a></li>
+              <li><a href="<?php echo site_url(); ?>">Home</a></li>
+			  <?php
+				if($this->session->userdata('tipe') == 'admin')
+				{			
+						//menu admin
+					    echo ' <li><a href="'.site_url('admin').'">Manage User</a></li>';
+					    echo ' <li><a href="'.site_url('admin/produk').'">Manage Produk</a></li>';
+					    echo ' <li><a href="'.site_url('login/logout').'">Logout</a></li>';
+				}elseif($this->session->userdata('tipe') == 'petani'){
+					    //menu petani
+					    echo ' <li><a href="'.site_url('example/example_4').'">Input Produk</a></li>';						
+					    echo ' <li><a href="'.site_url('example/example_4').'">Produk Saya</a></li>';	
+					    echo ' <li><a href="'.site_url('login/logout').'">Logout</a></li>';
+				}elseif($this->session->userdata('tipe') == 'distributor') {
+						//menu dst
+					    echo ' <li><a href="'.site_url('example/example_4').'">Lihat Produk</a></li>';
+					    echo ' <li><a href="'.site_url('example/example_4').'">Konfirmasi Pembayaran </a></li>';
+					    echo ' <li><a href="'.site_url('login/logout').'">Logout</a></li>';
+				}
+				
+			?>
+             
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -149,7 +171,7 @@
       <footer>
       	<div class="row">
 	        <div class="span6 b10">
-				Copyright &copy; <a target="_blank" href="https://plus.google.com/u/0/107789497808468736690?rel=author">John Skoumbourdis</a> | <a target="_blank" href="http://www.web-and-development.com">www.web-and-development.com</a>
+				Copyright &copy; by alone-alone from kelakon
 	        </div>
         </div>
       </footer>

@@ -1,2 +1,3 @@
-<h1>This is konten 1</h1>
-<p>Here is the default template with a webpage</p>
+<h1>Selamat datang admin !</h1>
+<p>Anda dapat melakukan management user dan produk disini</p>
+<p>Sukses selalu !</p>
